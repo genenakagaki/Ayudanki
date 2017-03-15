@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.genenakagaki.ayudanki.fragment.TermDefinitionFragment"
+    android:paddingTop="@dimen/quiz_vertical_margin"
+    android:paddingBottom="@dimen/quiz_vertical_margin">
+
+    <TextView
+        android:id="@+id/question_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/term_left_margin"
+        android:layout_marginBottom="@dimen/term_bottom_margin"
+        android:textStyle="bold"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/definition_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/term_left_margin"
+        android:layout_marginBottom="@dimen/term_bottom_margin"
+        android:textSize="20sp" />
+
+</LinearLayout>

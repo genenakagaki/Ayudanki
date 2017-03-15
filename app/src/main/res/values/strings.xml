@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Ayudanki</string>
+    <string name="action_settings">Settings</string>
+
+    <!--
+        Content provider
+    -->
+    <string name="content_authority">com.genenakagaki.ayudanki</string>
+    <string name="default_quiz_set_name">Default</string>
+
+    <!--
+        General words
+    -->
+    <string name="save">Save</string>
+    <string name="stop">Stop</string>
+    <string name="discard">Discard</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="all">All</string>
+    <string name="no_entry_message">No results available.</string>
+
+    <!--
+        QuizSetNavigationDrawer
+    -->
+    <string name="drawer_open_description">Open drawer</string>
+    <string name="drawer_close_description">Close drawer</string>
+
+    <!--
+        EditQuizSetDialogFragment
+    -->
+    <string name="dialog_add_quiz_set_title">Add QuizSet</string>
+    <string name="dialog_edit_quiz_set_title">Edit QuizSet</string>
+    <string name="input_quiz_set_hint">QuizSet name</string>
+    <string name="input_quiz_set_duplicate_error">QuizSet already exists.</string>
+    <string name="input_quiz_set_empty_error">Enter a QuizSet name.</string>
+
+    <!--
+        ConfirmDeleteDialog
+    -->
+    <string name="dialog_delete_quiz_set_title">Delete QuizSet \"%1$s\"?</string>
+    <string name="dialog_delete_quiz_set_message">All Quizzes under this QuizSet will be deleted.</string>
+    <string name="dialog_delete_quiz_title">Delete Quiz \"%1$s\"?</string>
+    <string name="dialog_delete_quiz_message">All terms under this Quiz will be deleted.</string>
+
+    <!--
+        QuizInfoActivity
+    -->
+    <string name="quiz_action_study">Study</string>
+    <string name="quiz_action_match">Match</string>
+
+    <!--
+        QuizInfoFragment
+    -->
+    <string name="add_card_button">Add new term</string>
+
+    <!--
+        EditQuizFragment
+    -->
+    <string name="title_edit_quiz_fragment_create">Create New Quiz</string>
+    <string name="title_edit_quiz_fragment_edit">Edit Quiz</string>
+    <string name="input_quiz_name_hint">Quiz name</string>
+    <string name="input_quiz_set_name_hint">QuizSet name</string>
+    <string name="dialog_confirm_discard_add">Discard new quiz?</string>
+    <string name="dialog_confirm_discard_edit">Discard changes?</string>
+    <string name="input_quiz_name_empty_error">Enter a quiz name.</string>
+    <string name="input_quiz_name_duplicate_error">A same quiz already exists.</string>
+
+    <!--
+        EditCardDialog
+    -->
+    <string name="input_term_hint">Term</string>
+    <string name="input_definition_hint">Definition</string>
+    <string name="input_term_empty_error">Enter a term.</string>
+    <string name="input_definition_empty_error">Enter a definition.</string>
+    <string name="input_term_duplicate_error">A same term already exists.</string>
+
+    <!--
+        QuizActivity
+    -->
+    <string name="dialog_message_confirm_close">Stop quiz?</string>
+    <string name="snackbar_message_not_enough_cards">There must be at least 2 terms to start quiz.</string>
+    <string name="quiz_result_message">Quiz complete!!</string>
+
+    <!--
+        Transition Names
+    -->
+    <string name="transition_name_quiz">quiz</string>
+    <string name="title_activity_study">StudyActivity</string>
+</resources>

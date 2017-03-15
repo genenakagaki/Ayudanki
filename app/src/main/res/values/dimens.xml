@@ -1,0 +1,24 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="list_item_horizontal_padding">16dp</dimen>
+    <dimen name="list_item_vertical_padding">16dp</dimen>
+
+    <dimen name="list_item_textsize">16sp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+    <!--
+        Quiz
+    -->
+    <dimen name="quiz_vertical_margin">16dp</dimen>
+
+    <dimen name="term_left_margin">16dp</dimen>
+    <dimen name="term_bottom_margin">16dp</dimen>
+
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_margin_half">4dp</dimen>
+    <dimen name="card_padding">8dp</dimen>
+</resources>

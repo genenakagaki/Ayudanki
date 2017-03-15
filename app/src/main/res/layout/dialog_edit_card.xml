@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/card_term_inputlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextAppearance="@style/Ayudanki.TextAppearance.TextInputLayout">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/card_term_textinput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_term_hint"
+            android:textColorHighlight="@color/colorPrimary"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/card_definition_inputlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextAppearance="@style/Ayudanki.TextAppearance.TextInputLayout">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/card_definition_textinput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/input_definition_hint"
+            android:textColorHighlight="@color/colorPrimary"/>
+    </android.support.design.widget.TextInputLayout>
+
+</LinearLayout>
