@@ -106,6 +106,12 @@ public class CardDb {
             }
         }
 
+        if (points == 10) {
+            return;
+        }
+
+        points++;
+
         ContentValues values = new ContentValues();
         values.put(CardEntry.COLUMN_POINTS, points);
 
@@ -123,7 +129,22 @@ public class CardDb {
                     CardEntry._ID + " = ?",
                     new String[] {String.valueOf(cardId)});
         }
+    }
 
+    public static int getCount(Context context, long quizId) {
+        Cursor c = null;
+        try {
+            c = context.getContentResolver().query(
+                    QuizContract.CardEntry.CONTENT_URI,
+                    new String[] {"count(*) AS count"},
+                    QuizContract.CardEntry.COLUMN_QUIZ_ID + " = ?",
+                    new String[]{String.valueOf(quizId)},
+                    null);
+            c.moveToFirst();
+            return c.getInt(0);
+        } finally {
+            if (c != null) c.close();
+        }
     }
 
     public static String getTerm(Context context, long cardId) {

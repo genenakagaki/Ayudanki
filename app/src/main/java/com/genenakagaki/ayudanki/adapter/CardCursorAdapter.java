@@ -38,11 +38,13 @@ public class CardCursorAdapter extends CursorAdapter {
     public static class ViewHolder {
         public final TextView termTextView;
         public final TextView definitionTextView;
+        public final TextView pointsTextView;
         public final CheckBox checkbox;
 
         public ViewHolder(View view) {
             termTextView = (TextView) view.findViewById(R.id.question_textview);
             definitionTextView = (TextView) view.findViewById(R.id.definition_textview);
+            pointsTextView = (TextView) view.findViewById(R.id.points_textview);
             checkbox = (CheckBox) view.findViewById(R.id.checkbox);
         }
     }
@@ -68,9 +70,13 @@ public class CardCursorAdapter extends CursorAdapter {
         final ViewHolder viewHolder = (ViewHolder) view.getTag();
 
         String term = cursor.getString(QuizContract.CardEntry.INDEX_TERM);
-        String definition = cursor.getString(QuizContract.CardEntry.INDEX_DEFINITION);
         viewHolder.termTextView.setText(term);
+
+        String definition = cursor.getString(QuizContract.CardEntry.INDEX_DEFINITION);
         viewHolder.definitionTextView.setText(definition);
+
+        int points = cursor.getInt(QuizContract.CardEntry.INDEX_POINTS);
+        viewHolder.pointsTextView.setText(String.valueOf(points));
 
         final long cardId = cursor.getLong(QuizContract.CardEntry.INDEX_ID);
 

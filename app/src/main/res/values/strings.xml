@@ -42,6 +42,9 @@
     <string name="dialog_delete_quiz_set_message">All Quizzes under this QuizSet will be deleted.</string>
     <string name="dialog_delete_quiz_title">Delete Quiz \"%1$s\"?</string>
     <string name="dialog_delete_quiz_message">All terms under this Quiz will be deleted.</string>
+    <string name="dialog_delete_card_title">Delete terms?</string>
+    <string name="dialog_delete_card_message">All checked terms will be deleted.</string>
+
 
     <!--
         QuizInfoActivity

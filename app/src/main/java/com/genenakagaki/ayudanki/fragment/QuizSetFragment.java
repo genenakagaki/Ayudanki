@@ -62,7 +62,6 @@ public class QuizSetFragment extends Fragment implements LoaderManager.LoaderCal
                             getActivity(), view, getString(R.string.transition_name_quiz));
                     startActivity(intent, options.toBundle());
                 } else {
-
                     if (D) Log.d(TAG, "cursor cannot be moved to position");
                 }
             }
@@ -73,6 +72,7 @@ public class QuizSetFragment extends Fragment implements LoaderManager.LoaderCal
 
     @Override
     public void onResume() {
+        if (D) Log.d(TAG, "onResume");
         getActivity().getSupportLoaderManager().initLoader(QUIZ_LOADER, null, this);
         super.onResume();
     }

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
 
+import com.genenakagaki.ayudanki.data.CardDb;
 import com.genenakagaki.ayudanki.fragment.QuizSetFragment;
 import com.genenakagaki.ayudanki.R;
 import com.genenakagaki.ayudanki.data.QuizContract;
@@ -54,15 +55,7 @@ QuizCursorAdapter extends CursorAdapter {
 
         long quizId = cursor.getLong(QuizContract.QuizEntry.INDEX_ID);
 
-        Cursor c = context.getContentResolver().query(
-                QuizContract.CardEntry.CONTENT_URI,
-                new String[] {"count(*) AS count"},
-                QuizContract.CardEntry.COLUMN_QUIZ_ID + " = ?",
-                new String[]{String.valueOf(quizId)},
-                null);
-
-        c.moveToFirst();
-        int cardCount = c.getInt(0);
+        int cardCount = CardDb.getCount(context, quizId);
 
         viewHolder.termCountTextView.setText(String.valueOf(cardCount));
     }

@@ -48,7 +48,7 @@ public class AddFabAnimator {
         return anim;
     }
 
-    public static void transformToFullScreen(Context context, FloatingActionButton fab) {
+    public static void transformToFullScreen(final Context context, final FloatingActionButton fab) {
         // Get screen size
         DisplayMetrics displayMetrics = new DisplayMetrics();
         ((AppCompatActivity) context).getWindowManager()
@@ -68,6 +68,23 @@ public class AddFabAnimator {
         fabScaleAnim.setInterpolator(new DecelerateInterpolator());
 
         animationSet.addAnimation(fabScaleAnim);
+        animationSet.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                fab.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(context, R.color.colorAccent)));
+                fab.setImageDrawable(ContextCompat.getDrawable(context, R.drawable.ic_add));
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
 
         // change background color
         mFabBackgroundColor = fab.getBackgroundTintList();
@@ -85,5 +102,6 @@ public class AddFabAnimator {
 
         parent.startAnimation(parentScaleAnim);
         fab.startAnimation(animationSet);
+
     }
 }

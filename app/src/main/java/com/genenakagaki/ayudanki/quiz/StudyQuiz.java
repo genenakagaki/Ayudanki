@@ -109,6 +109,8 @@ public class StudyQuiz {
     }
 
     public void createNextQuestion() {
+        ((QuizActivity)mContext).setProgressBar(mCurrentIndex);
+
         if (mCurrentIndex == mCardOrder.size()) {
             if (D) Log.d(TAG, "show quiz results");
 
@@ -119,11 +121,8 @@ public class StudyQuiz {
             }
 
             ((QuizActivity)mContext).switchFragment(QuizResultFragment.newInstance(terms));
-            ((QuizActivity)mContext).setProgressBar(mCurrentIndex);
             return;
         }
-
-        ((QuizActivity)mContext).setProgressBar(mCurrentIndex);
 
         int currentCardOrder = mCardOrder.get(mCurrentIndex);
         int currentCardIndex = currentCardOrder;
@@ -192,5 +191,19 @@ public class StudyQuiz {
         }
 
         mCurrentIndex++;
+    }
+
+    public void setNextAsTermDefinition() {
+        mCurrentIndex--;
+
+        int currentCardOrder = mCardOrder.get(mCurrentIndex);
+
+        while (currentCardOrder >= 100) {
+            currentCardOrder -= 100;
+        }
+
+        if (D) Log.d(TAG, "current card order: " + currentCardOrder);
+
+        mCardOrder.set(mCurrentIndex, currentCardOrder);
     }
 }

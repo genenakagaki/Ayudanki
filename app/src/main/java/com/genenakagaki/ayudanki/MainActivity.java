@@ -196,8 +196,6 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     protected void onResume() {
         getSupportLoaderManager().initLoader(QUIZ_SET_LOADER, null, this);
 
-        mFab.setBackgroundTintList(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.colorAccent)));
-        mFab.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_add));
         super.onResume();
     }
 

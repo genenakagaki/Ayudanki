@@ -141,9 +141,10 @@ public class MultipleChoiceFragment extends Fragment {
             CardDb.addPoint(getActivity(), mCard.getId());
         } else {
             cardView.setCardBackgroundColor(ContextCompat.getColor(getActivity(), R.color.error));
+            quizActivity.setNextAsTermDefinition();
         }
 
-        ((QuizActivity) getActivity()).showFab();
+        quizActivity.showFab();
 
         cardView = (CardView) getView().findViewById(R.id.choice0_cardview);
         cardView.setClickable(false);

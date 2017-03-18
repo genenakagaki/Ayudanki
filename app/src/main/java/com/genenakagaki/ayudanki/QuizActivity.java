@@ -160,4 +160,8 @@ public class QuizActivity extends AppCompatActivity {
         mProgressBar.setProgress(progress);
     }
 
+    public void setNextAsTermDefinition() {
+        mStudyQuiz.setNextAsTermDefinition();
+    }
+
 }

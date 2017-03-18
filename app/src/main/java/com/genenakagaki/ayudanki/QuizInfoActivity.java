@@ -199,13 +199,9 @@ public class QuizInfoActivity extends AppCompatActivity {
                     int cardCount = fragment.getCardCount();
                     List<Long> checkedCardIds = fragment.getCheckedCardIds();
 
-                    CardDb.delete(this, checkedCardIds);
-
-                    getSupportLoaderManager().restartLoader(QuizInfoFragment.CARD_LOADER, null, fragment);
-
-                    if (cardCount == checkedCardIds.size()) {
-                        onBackPressed();
-                    }
+                    ConfirmDeleteDialogFragment confirmDeleteDialogFragment =
+                            ConfirmDeleteDialogFragment.newInstance(checkedCardIds);
+                    confirmDeleteDialogFragment.show(getSupportFragmentManager(), null);
                     break;
             }
         } else {
