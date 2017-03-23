@@ -9,10 +9,13 @@ import android.util.Log;
 import com.genenakagaki.ayudanki.BuildConfig;
 import com.genenakagaki.ayudanki.data.model.Card;
 import com.genenakagaki.ayudanki.exception.NameAlreadyExistsException;
+import com.genenakagaki.ayudanki.exception.PreferenceNotFound;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+import static android.R.attr.max;
 import static com.genenakagaki.ayudanki.data.QuizContract.*;
 
 /**
@@ -207,6 +210,35 @@ public class CardDb {
             }
 
             return cards;
+        } finally {
+            if (c != null) c.close();
+        }
+    }
+
+    // gets random card from current quiz
+    public static Card getRandomCard(Context context) throws PreferenceNotFound {
+        long quizId = QuizDb.getCurrentId(context);
+
+        Cursor c = null;
+        try {
+            c = context.getContentResolver().query(
+                    CardEntry.CONTENT_URI,
+                    CardEntry.COLUMNS,
+                    CardEntry.COLUMN_QUIZ_ID + " = ?",
+                    new String[] {String.valueOf(quizId)},
+                    CardEntry.COLUMN_POINTS + " ASC");
+
+            Random rand = new Random();
+            int cursorPosition = rand.nextInt(c.getCount());
+            c.moveToPosition(cursorPosition);
+
+            long id = c.getLong(CardEntry.INDEX_ID);
+            String term = c.getString(CardEntry.INDEX_TERM);
+            String definition = c.getString(CardEntry.INDEX_DEFINITION);
+            int points = c.getInt(CardEntry.INDEX_POINTS);
+
+            return new Card(id, term, definition, points);
+
         } finally {
             if (c != null) c.close();
         }

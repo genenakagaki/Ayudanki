@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "116394956706",
+    "firebase_url": "https://ayudanki.firebaseio.com",
+    "project_id": "ayudanki",
+    "storage_bucket": "ayudanki.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116394956706:android:7d8d390b2c359311",
+        "android_client_info": {
+          "package_name": "com.genenakagaki.ayudanki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "116394956706-m5b4f3980t83qs1sinuq86qqscchqj1l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABHNTD_FsLjV-y8mrIC94VqcBHOWqyGEE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

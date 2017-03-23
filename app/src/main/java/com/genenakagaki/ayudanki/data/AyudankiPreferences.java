@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.genenakagaki.ayudanki.BuildConfig;
 import com.genenakagaki.ayudanki.exception.PreferenceNotFound;
+import com.genenakagaki.ayudanki.widget.CardAppWidgetProvider;
 
 /**
  * Created by gene on 2/15/17.
@@ -66,6 +67,9 @@ public class AyudankiPreferences {
 
          editor.putString(PREF_QUIZ_URI_STRING, quizUri.toString());
          editor.commit();
+
+         // update widget
+         CardAppWidgetProvider.reset();
      }
 
      public static Uri getCurrentQuiz(Context context) throws PreferenceNotFound {

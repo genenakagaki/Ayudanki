@@ -31,6 +31,7 @@ import android.widget.TextView;
 import com.genenakagaki.ayudanki.adapter.QuizSetCursorAdapter;
 import com.genenakagaki.ayudanki.animator.AddFabAnimator;
 import com.genenakagaki.ayudanki.animator.FabAnimator;
+import com.genenakagaki.ayudanki.auth.EmailPasswordActivity;
 import com.genenakagaki.ayudanki.data.AyudankiPreferences;
 import com.genenakagaki.ayudanki.data.QuizSetDb;
 import com.genenakagaki.ayudanki.dialog.ConfirmDeleteDialogFragment;
@@ -248,6 +249,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
                 return true;
             case R.id.action_settings:
+                return true;
+            case R.id.action_login:
+                Intent intent = new Intent(this, EmailPasswordActivity.class);
+                startActivity(intent);
                 return true;
         }
 
